@@ -56,7 +56,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   flex-wrap:wrap;
   gap:32px;
 }
-.cover-stat{font-family:'JetBrains Mono',monospace}
+.cover-stat{font-family:'JetBrains Mono',monospace;padding:12px 16px;border-radius:8px;border:1px solid transparent;transition:background 0.2s,border-color 0.2s,transform 0.2s;cursor:pointer}
 .cover-stat-num{font-size:22px;font-weight:600;color:var(--white);display:block}
 .cover-stat-label{font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.1em;margin-top:2px;display:block}
 .cover-scroll{
@@ -419,8 +419,11 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 #back-to-top.visible{opacity:1;pointer-events:auto}
 
 /* COVER STATS LINKS */
-.cover-stats a{text-decoration:none;color:inherit;transition:opacity 0.18s}
-.cover-stats a:hover{opacity:0.75}
+.cover-stats a{text-decoration:none;color:inherit;display:block}
+.cover-stats a:hover .cover-stat{background:rgba(242,107,91,0.1);border-color:rgba(242,107,91,0.38);transform:translateY(-3px)}
+.cover-stats a:hover .cover-stat-num{color:#f26b5b}
+.cover-stats a:hover .cover-stat-label{color:rgba(255,255,255,0.7)}
+.cover-stats a:hover .cover-stat-label::after{content:' →';color:#f26b5b}
 
 /* PRINT STYLES */
 @media print{
@@ -454,7 +457,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <h1 class="cover-h1">
       Travel Lakeland
       <span class="cover-h1-italic">Digital Marketing</span>
-      Audit_
+      Audit
     </h1>
     <p class="cover-subline">January 2025 – May 2026 &nbsp;·&nbsp; Consolidated Report</p>
     <div class="cover-stats">
