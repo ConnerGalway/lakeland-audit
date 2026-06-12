@@ -428,11 +428,74 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 
 /* PRINT STYLES */
 @media print{
-  #sidebar,#back-to-top,.tab-nav{display:none!important}
-  body{font-size:11pt}
-  .section{page-break-before:always}
+  /* Force backgrounds and colours to match screen exactly */
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+
+  /* Hide interactive / navigation chrome */
+  #sidebar,#back-to-top,.tab-nav,#mobile-nav,.cover-scroll,
+  .print-link,#progress-bar{display:none!important}
+
+  /* Layout: collapse the sidebar column so main fills the page */
+  body{font-size:10pt;margin:0}
+  #layout{display:block}
+  #main{width:100%;min-width:0}
+
+  /* Cover: let natural content height fill one page, break after */
+  #cover{min-height:0;page-break-after:always;padding:48px 56px}
+
+  /* Each major section starts on a fresh page */
+  .section{page-break-before:always;padding:32px 48px;border-bottom:none}
+
+  /* Footer on its own page */
+  #footer{page-break-before:always}
+
+  /* Keep component blocks intact — no mid-block splits */
+  .metric-card,.findings-card,.struct-card,.alert-card,
+  .insight-callout,.six-q-card,.email-stat-card,.email-stat-row,
+  .accordion-item,.priority-item,.multiplier-card,.chart-wrap,
+  .cluster-card,.sub-brand-card,.binary-choice,.hero-block,
+  .methodology-note{page-break-inside:avoid}
+  table{page-break-inside:avoid}
+  thead{display:table-header-group}
+
+  /* Charts */
   canvas{max-width:100%;height:auto!important}
-  .cover{page-break-before:avoid}
+
+  /* Show all tab panel content (not just the active one) */
+  .tab-panel{display:block!important}
+
+  /* Expand all accordions */
+  .accordion-body{max-height:none!important;padding-bottom:16px}
+
+  /* ── Legibility fixes ──────────────────────────────────────────
+     Low-opacity whites on dark backgrounds print as near-invisible.
+     Boost to ≥0.75 so they read clearly against printed navy.      */
+
+  /* Cover dark background */
+  .cover-top-right{color:rgba(255,255,255,0.82)!important}
+  .cover-subline{color:rgba(255,255,255,0.85)!important}
+  .cover-stat-label{color:rgba(255,255,255,0.78)!important}
+
+  /* Footer / "A note on what comes next" — navy background */
+  .footer-eyebrow{color:rgba(255,255,255,0.82)!important}
+  .footer-body p{color:rgba(255,255,255,0.92)!important}
+  .footer-bottom-right{color:rgba(255,255,255,0.78)!important}
+  .footer-tagline{color:rgba(255,255,255,0.78)!important}
+  .junction-footer-line1{color:rgba(255,255,255,0.92)!important}
+  .junction-footer-line2{color:rgba(255,255,255,0.82)!important}
+  .junction-footer-line3{color:rgba(255,255,255,0.72)!important}
+
+  /* Navy hero block inside social section */
+  .hero-block-body{color:rgba(255,255,255,0.92)!important}
+
+  /* Navy insight callouts */
+  .insight-callout.navy .insight-callout-body{color:rgba(255,255,255,0.92)!important}
+  .insight-callout.navy .insight-callout-title{color:var(--mint)!important}
+
+  /* Body muted grey text on white — bump to a legible dark tone */
+  .section-desc,.chart-sub,.metric-label,.table-note,
+  .accordion-body p,.insight-callout:not(.navy) .insight-callout-body,
+  .six-q-q,.methodology-note p,.multiplier-label{color:#3a3a3a!important}
 }
 .print-link{margin-top:8px;border-top:1px solid var(--border);padding-top:12px;font-size:11px}
 @media print{.print-link{display:none!important}}
@@ -472,7 +535,6 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <div class="cover-top-right">Prepared May 2026<br>Travel Lakeland</div>
   </div>
   <div class="cover-center">
-    <div class="cover-eyebrow">DIGITAL MARKETING AUDIT</div>
     <h1 class="cover-h1">
       Travel Lakeland
       <span class="cover-h1-italic">Digital Marketing</span>
@@ -1294,7 +1356,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const initializedCharts = {};
 
 function activateTab(section, tabId) {
-  const container = section.closest ? section : document.getElementById('social');
+  const container = section.closest('#social') || document.getElementById('social');
   container.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.tab === tabId);
     btn.setAttribute('aria-selected', btn.dataset.tab === tabId);
