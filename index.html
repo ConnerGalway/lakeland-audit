@@ -415,8 +415,9 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 .methodology-note p{font-size:13px;line-height:1.65;color:var(--text-muted);margin:0}
 
 /* BACK TO TOP */
-#back-to-top{position:fixed;bottom:32px;right:32px;background:var(--navy);color:var(--white);border:none;border-radius:6px;padding:10px 16px;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.25s;z-index:500;letter-spacing:0.03em}
+#back-to-top{position:fixed;bottom:32px;right:32px;background:var(--navy);color:var(--white);border:none;border-radius:6px;padding:10px 16px;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.25s;z-index:1000;letter-spacing:0.03em;box-shadow:0 2px 12px rgba(0,0,0,0.22)}
 #back-to-top.visible{opacity:1;pointer-events:auto}
+@media(max-width:900px){#back-to-top{bottom:24px;right:20px;font-size:12px;padding:9px 14px}}
 
 /* COVER STATS LINKS */
 .cover-stats a{text-decoration:none;color:inherit;display:block}
@@ -441,6 +442,24 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 .junction-footer-line1{font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:6px;font-weight:500}
 .junction-footer-line2{font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:8px}
 .junction-footer-line3{font-family:'Inter Tight',sans-serif;font-size:12px;color:rgba(255,255,255,0.3);font-style:italic}
+/* MOBILE NAV */
+#mobile-nav{display:none}
+@media(max-width:900px){
+  #mobile-nav{display:block;position:sticky;top:0;z-index:300;background:var(--navy);box-shadow:0 2px 16px rgba(0,0,0,0.2)}
+  #mobile-nav-bar{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:52px}
+  #mobile-nav-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5)}
+  #mobile-nav-toggle{background:none;border:none;cursor:pointer;padding:10px 4px;display:flex;flex-direction:column;gap:5px;-webkit-tap-highlight-color:transparent}
+  #mobile-nav-toggle span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:transform 0.22s ease,opacity 0.22s ease;transform-origin:center}
+  #mobile-nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  #mobile-nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0)}
+  #mobile-nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  #mobile-nav-drawer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.08);overflow:hidden;max-height:0;transition:max-height 0.28s ease}
+  #mobile-nav-drawer.open{max-height:520px}
+  .mobile-nav-item{display:flex;align-items:center;gap:14px;padding:15px 24px;color:rgba(255,255,255,0.65);text-decoration:none;font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.15s,color 0.15s;-webkit-tap-highlight-color:transparent}
+  .mobile-nav-item:last-child{border-bottom:none}
+  .mobile-nav-item:hover,.mobile-nav-item:active{background:rgba(255,255,255,0.06);color:var(--white)}
+  .mobile-nav-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--coral);min-width:20px}
+}
 </style>
 </head>
 <body>
@@ -470,6 +489,25 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   </div>
   <a href="#layout" class="cover-scroll">Scroll to report ↓</a>
 </section>
+
+<!-- MOBILE NAV -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+  <div id="mobile-nav-bar">
+    <span id="mobile-nav-label">Travel Lakeland Audit</span>
+    <button id="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mobile-nav-drawer">
+    <a href="#summary" class="mobile-nav-item"><span class="mobile-nav-num">01</span>Executive Summary</a>
+    <a href="#website" class="mobile-nav-item"><span class="mobile-nav-num">02</span>Website Performance</a>
+    <a href="#acquisition" class="mobile-nav-item"><span class="mobile-nav-num">03</span>Acquisition</a>
+    <a href="#social" class="mobile-nav-item"><span class="mobile-nav-num">04</span>Social Media</a>
+    <a href="#content" class="mobile-nav-item"><span class="mobile-nav-num">05</span>Content &amp; Blog</a>
+    <a href="#email" class="mobile-nav-item"><span class="mobile-nav-num">06</span>Email Newsletter</a>
+    <a href="#recommendations" class="mobile-nav-item"><span class="mobile-nav-num">07</span>Recommendations</a>
+  </div>
+</nav>
 
 <!-- MAIN LAYOUT -->
 <div id="layout">
@@ -1629,8 +1667,24 @@ Chart.register({
 // ── BACK TO TOP ───────────────────────────────────────────────────────
 const backToTop = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
-  backToTop.classList.toggle('visible', window.scrollY > 500);
+  backToTop.classList.toggle('visible', window.scrollY > 300);
 }, { passive: true });
+
+const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
+if (mobileNavToggle && mobileNavDrawer) {
+  mobileNavToggle.addEventListener('click', () => {
+    const isOpen = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+    mobileNavToggle.setAttribute('aria-expanded', String(!isOpen));
+    mobileNavDrawer.classList.toggle('open', !isOpen);
+  });
+  document.querySelectorAll('.mobile-nav-item').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      mobileNavDrawer.classList.remove('open');
+    });
+  });
+}
 </script>
 <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑ Top</button>
 </body>
