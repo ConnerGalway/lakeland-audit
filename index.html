@@ -400,6 +400,44 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 }
 
 .section-divider{height:1px;background:var(--border);margin:0}
+
+/* SIX QUESTIONS */
+.six-questions{margin-top:48px;padding-top:40px;border-top:1px solid var(--border)}
+.six-q-title{font-family:'Inter Tight',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin-bottom:24px}
+.six-q-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.six-q-card{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--coral);border-radius:8px;padding:20px 22px}
+.six-q-q{font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+.six-q-a{font-size:14px;line-height:1.65;color:#333;font-weight:400}
+@media(max-width:640px){.six-q-grid{grid-template-columns:1fr}}
+
+/* METHODOLOGY NOTE */
+.methodology-note{border-left:3px solid var(--coral);padding:14px 18px;background:rgba(242,107,91,0.04);border-radius:0 6px 6px 0;margin-bottom:32px;max-width:720px}
+.methodology-note p{font-size:13px;line-height:1.65;color:var(--text-muted);margin:0}
+
+/* BACK TO TOP */
+#back-to-top{position:fixed;bottom:32px;right:32px;background:var(--navy);color:var(--white);border:none;border-radius:6px;padding:10px 16px;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.25s;z-index:500;letter-spacing:0.03em}
+#back-to-top.visible{opacity:1;pointer-events:auto}
+
+/* COVER STATS LINKS */
+.cover-stats a{text-decoration:none;color:inherit;transition:opacity 0.18s}
+.cover-stats a:hover{opacity:0.75}
+
+/* PRINT STYLES */
+@media print{
+  #sidebar,#back-to-top,.tab-nav{display:none!important}
+  body{font-size:11pt}
+  .section{page-break-before:always}
+  canvas{max-width:100%;height:auto!important}
+  .cover{page-break-before:avoid}
+}
+.print-link{margin-top:8px;border-top:1px solid var(--border);padding-top:12px;font-size:11px}
+@media print{.print-link{display:none!important}}
+
+/* JUNCTION FOOTER STRIP */
+.junction-footer-strip{text-align:center;padding:48px 64px 0;margin-top:32px;border-top:1px solid rgba(255,255,255,0.12)}
+.junction-footer-line1{font-family:'Inter Tight',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);margin-bottom:6px;font-weight:500}
+.junction-footer-line2{font-family:'Inter Tight',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:8px}
+.junction-footer-line3{font-family:'Inter Tight',sans-serif;font-size:12px;color:rgba(255,255,255,0.3);font-style:italic}
 </style>
 </head>
 <body>
@@ -420,11 +458,11 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     </h1>
     <p class="cover-subline">January 2025 – May 2026 &nbsp;·&nbsp; Consolidated Report</p>
     <div class="cover-stats">
-      <div class="cover-stat"><span class="cover-stat-num">37,297</span><span class="cover-stat-label">Total Views</span></div>
-      <div class="cover-stat"><span class="cover-stat-num">62.4%</span><span class="cover-stat-label">Organic Engagement</span></div>
-      <div class="cover-stat"><span class="cover-stat-num">51.9%</span><span class="cover-stat-label">Email Open Rate</span></div>
-      <div class="cover-stat"><span class="cover-stat-num">4–5×</span><span class="cover-stat-label">Instagram Advantage</span></div>
-      <div class="cover-stat"><span class="cover-stat-num">10</span><span class="cover-stat-label">Priority Recommendations</span></div>
+      <a href="#website"><div class="cover-stat"><span class="cover-stat-num">37,297</span><span class="cover-stat-label">Total Views</span></div></a>
+      <a href="#acquisition"><div class="cover-stat"><span class="cover-stat-num">62.4%</span><span class="cover-stat-label">Organic Engagement</span></div></a>
+      <a href="#email"><div class="cover-stat"><span class="cover-stat-num">51.9%</span><span class="cover-stat-label">Email Open Rate</span></div></a>
+      <a href="#social"><div class="cover-stat"><span class="cover-stat-num">4–5×</span><span class="cover-stat-label">Instagram Advantage</span></div></a>
+      <a href="#recommendations"><div class="cover-stat"><span class="cover-stat-num">10</span><span class="cover-stat-label">Priority Recommendations</span></div></a>
     </div>
   </div>
   <a href="#layout" class="cover-scroll">Scroll to report ↓</a>
@@ -447,6 +485,9 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <a href="#content" class="nav-item" data-section="content"><span class="nav-num">05</span> Content &amp; Blog</a>
     <a href="#email" class="nav-item" data-section="email"><span class="nav-num">06</span> Email Newsletter</a>
     <a href="#recommendations" class="nav-item" data-section="recommendations"><span class="nav-num">07</span> Recommendations</a>
+    <a class="nav-item print-link" href="#" onclick="window.print();return false;">
+      <span class="nav-num">⎙</span>Print / Export
+    </a>
   </div>
 </nav>
 
@@ -457,6 +498,10 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   <div class="section-eyebrow">01 / EXECUTIVE SUMMARY</div>
   <h2 class="section-title">What the data tells us.</h2>
   <p class="section-desc">Travel Lakeland's digital ecosystem is producing strong signals across multiple channels, but those signals are not yet connected into a coordinated strategy. The website has a genuine anchor in the Iron Horse Trail. Organic search delivers high-quality visitors. The email newsletter was performing at an exceptional level before it was discontinued. Instagram engagement on core content themes consistently outperforms Facebook. The audit that follows maps where the evidence leads, and where the measurement gaps prevent confident investment.</p>
+
+  <div class="methodology-note">
+    <p>This audit incorporates AI-assisted analysis using Perplexity and Claude (Anthropic) to synthesize channel performance data across the website, social, blog, and email channels. All findings and recommendations have been reviewed and validated by the Junction Consulting team. AI tools accelerated pattern recognition and data synthesis; every conclusion reflects Junction's professional judgment.</p>
+  </div>
 
   <div class="grid-2">
     <div class="findings-card mint">
@@ -500,6 +545,36 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
       <div class="struct-body">870+ malformed URLs, admin pages appearing in GA4 visitor data, and two confirmed measurement anomalies are degrading data quality and user experience.</div>
     </div>
   </div>
+
+  <div class="six-questions">
+    <h3 class="six-q-title">Your Six Questions, Answered</h3>
+    <div class="six-q-grid">
+      <div class="six-q-card">
+        <div class="six-q-q">What is working well across your digital presence?</div>
+        <div class="six-q-a">Iron Horse Trail, organic search quality, email engagement rate, and Instagram carousel format are the clearest strengths across the ecosystem.</div>
+      </div>
+      <div class="six-q-card">
+        <div class="six-q-q">What is underperforming, and why?</div>
+        <div class="six-q-a">Facebook reach for editorial content, sub-brand social channels, and the blog-to-social publishing workflow — each underperforming due to format mismatch and workflow gaps, not content quality.</div>
+      </div>
+      <div class="six-q-card">
+        <div class="six-q-q">What is currently driving traffic to the website?</div>
+        <div class="six-q-a">Organic search at 62.4% engagement rate, and direct traffic. Iron Horse Trail is the single strongest content anchor at 8,435 annual views.</div>
+      </div>
+      <div class="six-q-card">
+        <div class="six-q-q">Where are the under-appreciated opportunities?</div>
+        <div class="six-q-a">The email newsletter (discontinued while outperforming), Instagram as the primary platform for editorial content, and fishing/dark sky/provincial parks as content gaps with demonstrated search demand.</div>
+      </div>
+      <div class="six-q-card">
+        <div class="six-q-q">How should internal resources be structured for greater effectiveness?</div>
+        <div class="six-q-a">A documented publish-to-social workflow would unlock most of the opportunity at no additional cost. Sub-brand channels require a staffing decision — the half-active state is the worst option.</div>
+      </div>
+      <div class="six-q-card">
+        <div class="six-q-q">When ready to invest in paid campaigns, where should that focus go?</div>
+        <div class="six-q-a">Not yet. Paid investment cannot be confidently attributed without GA4 conversion tracking in place. Complete Recommendations 1–2 first.</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SECTION 2: WEBSITE PERFORMANCE -->
@@ -525,6 +600,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   <div class="chart-wrap">
     <div class="chart-title">Top Landing Pages</div>
     <div class="chart-sub">Sessions, new users, and avg engagement time for highest-traffic entry points</div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
     <table class="data-table">
       <thead><tr><th>Page</th><th>Sessions</th><th>New Users</th><th>Avg Engagement</th><th class="bar-cell">Relative</th></tr></thead>
       <tbody>
@@ -537,6 +613,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
         <tr><td>/blog/kalynacountry-sinews-of-steel</td><td>126</td><td>115</td><td>53s</td><td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:76%"></div></div></td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 
   <div class="alert-card" style="margin-bottom:28px">
@@ -565,6 +642,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     </div>
   </div>
 
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
   <table class="data-table" style="margin-bottom:24px">
     <thead><tr><th>Channel</th><th>Sessions</th><th>Engagement Rate</th><th>Avg Engagement Time</th></tr></thead>
     <tbody>
@@ -575,6 +653,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
       <tr><td>Direct</td><td>9,393</td><td>23.7%</td><td>19.6s</td></tr>
     </tbody>
   </table>
+  </div>
 
   <div class="insight-callout navy">
     <div class="insight-callout-title">Organic Social: engaged but brief</div>
@@ -627,6 +706,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 
   <!-- TAB: FACEBOOK -->
   <div class="tab-panel" id="tab-facebook">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
     <table class="data-table">
       <thead><tr><th>Theme</th><th>Posts</th><th>Avg Reach</th><th>Avg Wtd Eng Rate</th><th>Total Clicks</th></tr></thead>
       <tbody>
@@ -643,6 +723,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
         <tr><td>Kalyna Country</td><td>1</td><td>83</td><td>1.2%</td><td>3</td></tr>
       </tbody>
     </table>
+    </div>
     <p class="table-note">* Trade Show figures may include paid amplification (unconfirmed). Blog posts average 2.2 link clicks per post.</p>
 
     <div class="insight-callout mint" style="margin-bottom:24px">
@@ -666,6 +747,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <div class="posts-grid">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border)">Top 5 Posts</div>
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
         <table class="data-table" style="margin-bottom:0">
           <thead><tr><th>Post</th><th>Format</th><th>Reach</th><th>Eng Rate</th></tr></thead>
           <tbody>
@@ -676,9 +758,11 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
             <tr><td style="font-size:12px">Mar 10 Fishing giveaway</td><td>Photo</td><td>2,470</td><td>7.6%</td></tr>
           </tbody>
         </table>
+        </div>
       </div>
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#c0392b;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border)">Bottom 5 Posts</div>
+        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
         <table class="data-table" style="margin-bottom:0">
           <thead><tr><th>Post</th><th>Format</th><th>Reach</th><th>Eng Rate</th></tr></thead>
           <tbody>
@@ -689,6 +773,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
             <tr><td style="font-size:12px">Jan 9 Blog Warm Up</td><td>Photo</td><td>100</td><td>0.0%</td></tr>
           </tbody>
         </table>
+        </div>
         <p class="table-note" style="margin-top:8px">All bottom 5 posts are photos.</p>
       </div>
     </div>
@@ -696,6 +781,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
 
   <!-- TAB: INSTAGRAM -->
   <div class="tab-panel" id="tab-instagram">
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
     <table class="data-table">
       <thead><tr><th>Theme</th><th>Posts</th><th>Avg Reach</th><th>Avg Wtd Eng Rate</th><th>Total Wtd Eng</th></tr></thead>
       <tbody>
@@ -711,6 +797,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
         <tr><td>Event: Winter Games</td><td>9</td><td>128</td><td>2.3%</td><td>27</td></tr>
       </tbody>
     </table>
+    </div>
 
     <div class="metric-row">
       <div class="metric-card"><div class="metric-num coral">7.0%</div><div class="metric-label">Carousel avg engagement rate</div></div>
@@ -875,6 +962,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     </div>
   </div>
 
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
   <table class="data-table" style="margin-bottom:32px">
     <thead><tr><th>Period</th><th>Sends</th><th>Avg Open Rate</th><th>Avg Click Rate</th><th>List Size</th></tr></thead>
     <tbody>
@@ -884,6 +972,7 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
       <tr class="highlight"><td>Apr 2026 Reactivation</td><td>1</td><td>33.7%</td><td>11.95%</td><td>745</td></tr>
     </tbody>
   </table>
+  </div>
 
   <div class="insight-callout mint" style="margin-bottom:16px">
     <div class="insight-callout-title">What the content data shows</div>
@@ -1112,6 +1201,12 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
       May 2026 · Prepared by Junction Consulting
     </div>
   </div>
+  <div class="junction-footer-strip">
+    <img src="data:image/png;base64,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" alt="Junction Consulting" style="height:28px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px;display:block;margin-left:auto;margin-right:auto">
+    <div class="junction-footer-line1">Prepared by Junction Consulting · May 2026</div>
+    <div class="junction-footer-line2">Confidential — Prepared for Travel Lakeland</div>
+    <div class="junction-footer-line3">Questions about this report? Contact Junction Consulting.</div>
+  </div>
 </footer>
 
 </main>
@@ -1265,12 +1360,13 @@ function initChartPageViews() {
 function initChartBubble() {
   const ctx = document.getElementById('chartBubble');
   if (!ctx) return;
+  const SLATE = '#8096a7';
   const channels = [
-    { label: 'Organic Search', x: 7438, y: 62.4, r: 22, color: CORAL },
-    { label: 'Direct', x: 9393, y: 23.7, r: 8, color: NAVY_LIGHT },
-    { label: 'Organic Social', x: 3044, y: 58.8, r: 9, color: 'rgba(24,63,97,0.5)' },
-    { label: 'Referral', x: 1916, y: 55.6, r: 18, color: NAVY_MED },
-    { label: 'Email', x: 189, y: 46.6, r: 18, color: MINT },
+    { label: 'Organic Search', x: 7438, y: 62.4, r: 18, highlight: true },
+    { label: 'Referral',       x: 1916, y: 55.6, r: 17, highlight: false },
+    { label: 'Email',          x: 189,  y: 46.6, r: 18, highlight: true },
+    { label: 'Organic Social', x: 3044, y: 58.8, r: 8,  highlight: false },
+    { label: 'Direct',         x: 9393, y: 23.7, r: 7,  highlight: false },
   ];
   new Chart(ctx, {
     type: 'bubble',
@@ -1278,8 +1374,8 @@ function initChartBubble() {
       datasets: channels.map(c => ({
         label: c.label,
         data: [{ x: c.x, y: c.y, r: c.r }],
-        backgroundColor: c.color + (c.color.startsWith('rgba') ? '' : 'cc'),
-        borderColor: c.color,
+        backgroundColor: (c.highlight ? '#f26b5b' : SLATE) + 'cc',
+        borderColor: c.highlight ? '#f26b5b' : SLATE,
         borderWidth: 2,
       }))
     },
@@ -1324,21 +1420,19 @@ function initChartFBFormat() {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Video (5 posts)', 'Photo (51 posts)', 'Reel (1 post)', 'Link (2 posts)'],
+      labels: ['Avg Reach', 'Engagement Rate %'],
       datasets: [
         {
-          label: 'Avg Reach',
-          data: [404, 270, 116, 90],
-          backgroundColor: NAVY,
+          label: 'Photos',
+          data: [270, 2.8],
+          backgroundColor: '#8096a7',
           borderRadius: 4,
-          yAxisID: 'yReach',
         },
         {
-          label: 'Engagement Rate',
-          data: [5.5, 2.8, 10.3, 3.7],
-          backgroundColor: CORAL + 'cc',
+          label: 'Videos',
+          data: [404, 5.5],
+          backgroundColor: '#f26b5b',
           borderRadius: 4,
-          yAxisID: 'yEng',
         }
       ]
     },
@@ -1350,19 +1444,11 @@ function initChartFBFormat() {
         tooltip: { mode: 'index', intersect: false }
       },
       scales: {
-        yReach: {
-          type: 'linear', position: 'left',
-          title: { display: true, text: 'Avg Reach', font: { family: 'JetBrains Mono', size: 10 } },
+        x: { grid: { display: false }, ticks: { font: { family: 'Inter Tight', size: 12 } } },
+        y: {
           grid: { color: 'rgba(0,0,0,0.05)' },
           ticks: { font: { family: 'JetBrains Mono', size: 10 } }
-        },
-        yEng: {
-          type: 'linear', position: 'right',
-          title: { display: true, text: 'Engagement Rate (%)', font: { family: 'JetBrains Mono', size: 10 } },
-          grid: { drawOnChartArea: false },
-          ticks: { font: { family: 'JetBrains Mono', size: 10 }, callback: v => v + '%' }
-        },
-        x: { grid: { display: false }, ticks: { font: { family: 'Inter Tight', size: 12 } } }
+        }
       }
     }
   });
@@ -1372,21 +1458,22 @@ function initChartFBFormat() {
 function initChartCrossPlatform() {
   const ctx = document.getElementById('chartCrossPlatform');
   if (!ctx) return;
+  // Sorted by Instagram rate descending
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Blog', 'Operator Feature', 'Curated Adventure', 'Stakeholder-Tourism Wk', 'Trade Show', 'Event-Winter Games'],
+      labels: ['Operator Feature', 'Blog', 'Stakeholder Tourism Week', 'Curated Adventure', 'Event (Winter Games)'],
       datasets: [
         {
           label: 'Facebook',
-          data: [1.3, 1.8, 1.6, 4.2, 9.0, 3.6],
-          backgroundColor: NAVY,
+          data: [1.8, 1.3, 4.2, 1.6, 3.6],
+          backgroundColor: '#4a6fa5',
           borderRadius: 3,
         },
         {
           label: 'Instagram',
-          data: [6.9, 7.3, 6.2, 6.5, 8.6, 2.3],
-          backgroundColor: CORAL,
+          data: [7.3, 6.9, 6.5, 6.2, 2.3],
+          backgroundColor: '#f26b5b',
           borderRadius: 3,
         }
       ]
@@ -1396,6 +1483,13 @@ function initChartCrossPlatform() {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        title: {
+          display: true,
+          text: 'Content Performance by Platform — Weighted Engagement Rate (%)',
+          font: { family: 'Inter Tight', size: 13, weight: '700' },
+          color: NAVY,
+          padding: { bottom: 16 }
+        },
         legend: { position: 'bottom', labels: { font: { family: 'Inter Tight', size: 12 }, padding: 16 } },
         tooltip: {
           callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.x}%` }
@@ -1420,15 +1514,9 @@ function initChartCrossPlatform() {
 function initChartEmail() {
   const ctx = document.getElementById('chartEmail');
   if (!ctx) return;
-  const labels = [
-    'S1 Jan\'24','S2 Feb\'24','S3 Mar\'24','S4 Apr\'24','S5 Jun\'24',
-    'S6 Jul\'24','S7 Aug\'24','S8 Sep\'24','S9 Oct\'24','S10 Nov\'24','S11 Dec\'24',
-    'S12 Jan\'25','S13 Feb\'25','S14 Mar\'25','S15 Apr\'25','S16 May\'25','S17 Jun\'25',
-    '','',
-    'Apr\'26 Reactivation'
-  ];
-  const data = [55, 53, 52, 50, 54, 47, 46, 46, 45, 46, 47, 51, 52, 52, 51, 53, 52.96, null, null, 33.7];
-
+  // Main series: Jan 2024 → Jun 2025 (3 points: Jan 2024 avg, Jul 2024 avg, Jan 2025 avg)
+  // Gap then Apr 2026 reactivation
+  const labels = ['Jan 2024', 'Jul 2024', 'Jan 2025', '', 'Apr 2026'];
   new Chart(ctx, {
     type: 'line',
     data: {
@@ -1436,35 +1524,44 @@ function initChartEmail() {
       datasets: [
         {
           label: 'Open Rate',
-          data: data.slice(0, 17),
-          borderColor: NAVY,
-          backgroundColor: 'rgba(24,63,97,0.08)',
+          data: [52.8, 46.2, 51.9, null, null],
+          borderColor: '#f26b5b',
+          backgroundColor: 'rgba(242,107,91,0.08)',
           borderWidth: 2.5,
-          pointRadius: 4,
-          pointBackgroundColor: NAVY,
+          pointRadius: 5,
+          pointBackgroundColor: '#f26b5b',
           fill: true,
           tension: 0.3,
           spanGaps: false,
         },
         {
           label: 'Reactivation',
-          data: Array(17).fill(null).concat([null, null, 33.7]),
-          borderColor: CORAL,
-          backgroundColor: CORAL + '33',
-          borderWidth: 2.5,
-          pointRadius: 7,
-          pointBackgroundColor: CORAL,
-          pointStyle: 'star',
+          data: [null, null, null, null, 33.7],
+          borderColor: '#f26b5b',
+          backgroundColor: 'rgba(242,107,91,0.15)',
+          borderWidth: 2,
+          pointRadius: 8,
+          pointStyle: 'triangle',
+          pointBackgroundColor: '#f26b5b',
           fill: false,
           tension: 0,
           spanGaps: false,
         },
         {
-          label: 'Industry Avg (30%)',
-          data: Array(20).fill(30),
-          borderColor: 'rgba(0,0,0,0.2)',
-          borderWidth: 1,
-          borderDash: [6,4],
+          label: 'Industry Average (30%)',
+          data: [30, 30, 30, 30, 30],
+          borderColor: 'rgba(0,0,0,0.25)',
+          borderWidth: 1.5,
+          borderDash: [6, 4],
+          pointRadius: 0,
+          fill: false,
+        },
+        {
+          label: 'Exceptional (45%+)',
+          data: [45, 45, 45, 45, 45],
+          borderColor: 'rgba(181,229,214,0.8)',
+          borderWidth: 1.5,
+          borderDash: [4, 4],
           pointRadius: 0,
           fill: false,
         }
@@ -1480,32 +1577,12 @@ function initChartEmail() {
             label: ctx => ctx.raw != null ? ` ${ctx.dataset.label}: ${ctx.raw}%` : null
           },
           filter: item => item.raw != null
-        },
-        annotation: {
-          annotations: {
-            discontinuedLine: {
-              type: 'line',
-              xMin: 16.5, xMax: 16.5,
-              borderColor: CORAL,
-              borderWidth: 2,
-              borderDash: [6, 4],
-              label: {
-                content: 'DISCONTINUED',
-                enabled: true,
-                position: 'start',
-                font: { family: 'JetBrains Mono', size: 9 },
-                color: CORAL,
-                backgroundColor: 'transparent',
-                yAdjust: -10,
-              }
-            }
-          }
         }
       },
       scales: {
         x: {
           grid: { color: 'rgba(0,0,0,0.04)' },
-          ticks: { font: { family: 'JetBrains Mono', size: 9 }, maxRotation: 45 }
+          ticks: { font: { family: 'JetBrains Mono', size: 10 } }
         },
         y: {
           min: 20, max: 70,
@@ -1545,6 +1622,13 @@ Chart.register({
     ctx2.restore();
   }
 });
+
+// ── BACK TO TOP ───────────────────────────────────────────────────────
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+}, { passive: true });
 </script>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑ Top</button>
 </body>
 </html>
