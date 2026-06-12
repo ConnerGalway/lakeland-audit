@@ -577,8 +577,9 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <a href="#acquisition" class="mobile-nav-item"><span class="mobile-nav-num">03</span>Acquisition</a>
     <a href="#social" class="mobile-nav-item"><span class="mobile-nav-num">04</span>Social Media</a>
     <a href="#content" class="mobile-nav-item"><span class="mobile-nav-num">05</span>Content &amp; Blog</a>
-    <a href="#email" class="mobile-nav-item"><span class="mobile-nav-num">06</span>Email Newsletter</a>
-    <a href="#recommendations" class="mobile-nav-item"><span class="mobile-nav-num">07</span>Recommendations</a>
+    <a href="#curated" class="mobile-nav-item"><span class="mobile-nav-num">06</span>Curated Adventures</a>
+    <a href="#email" class="mobile-nav-item"><span class="mobile-nav-num">07</span>Email Newsletter</a>
+    <a href="#recommendations" class="mobile-nav-item"><span class="mobile-nav-num">08</span>Recommendations</a>
   </div>
 </nav>
 
@@ -597,8 +598,9 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
     <a href="#acquisition" class="nav-item" data-section="acquisition"><span class="nav-num">03</span> Acquisition</a>
     <a href="#social" class="nav-item" data-section="social"><span class="nav-num">04</span> Social Media</a>
     <a href="#content" class="nav-item" data-section="content"><span class="nav-num">05</span> Content &amp; Blog</a>
-    <a href="#email" class="nav-item" data-section="email"><span class="nav-num">06</span> Email Newsletter</a>
-    <a href="#recommendations" class="nav-item" data-section="recommendations"><span class="nav-num">07</span> Recommendations</a>
+    <a href="#curated" class="nav-item" data-section="curated"><span class="nav-num">06</span> Curated Adventures</a>
+    <a href="#email" class="nav-item" data-section="email"><span class="nav-num">07</span> Email Newsletter</a>
+    <a href="#recommendations" class="nav-item" data-section="recommendations"><span class="nav-num">08</span> Recommendations</a>
     <a class="nav-item print-link" href="#" onclick="window.print();return false;">
       <span class="nav-num">⎙</span>Print / Export
     </a>
@@ -1050,9 +1052,224 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   </div>
 </section>
 
-<!-- SECTION 6: EMAIL NEWSLETTER -->
+<!-- SECTION 6: CURATED ADVENTURES -->
+<section class="section" id="curated">
+  <div class="section-eyebrow">06 / CURATED ADVENTURES</div>
+  <h2 class="section-title">15 experience pages. 1,460 total views. <em>One page at 44%.</em></h2>
+  <p class="section-desc">The Curated Adventures section — travellakeland.ca/things-to-do/curated-adventures — hosts themed itinerary guides directing visitors through specific Lakeland experiences. All data below covers the full 2025 calendar year (January 1 – December 31). Session counts (GA4 Landing Page report) measure entry-point visits only; view counts (GA4 Pages and Screens report) measure all page loads regardless of entry point.</p>
+
+  <div class="metric-row">
+    <div class="metric-card">
+      <div class="metric-num">1,460</div>
+      <div class="metric-label">Total page views<br>Hub + all sub-pages, 2025</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">1,051</div>
+      <div class="metric-label">Total landing sessions<br>Entry-point visits across all pages</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num coral">44%</div>
+      <div class="metric-label">Share of all curated-adventures sessions<br>Ice Hut Luxe alone</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num">97%+</div>
+      <div class="metric-label">New-user rate<br>Across all sub-pages</div>
+    </div>
+  </div>
+
+  <div class="insight-callout peach">
+    <div class="insight-callout-title">The hub page is not the primary entry point</div>
+    <div class="insight-callout-body">The hub URL (/things-to-do/curated-adventures) recorded only 61 landing sessions — 5.8% of total Curated Adventures entry traffic — and 232 total page views across the full year. Sub-pages receive the vast majority of direct entries. Visitors are discovering individual experiences through external links or search results rather than navigating through the hub as an internal starting point.</div>
+  </div>
+
+  <h3 style="font-size:14px;font-weight:700;color:var(--navy);margin:8px 0 16px">Traffic by Experience Page — Full Year 2025</h3>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Landing Sessions by Curated Adventures Page</div>
+    <div class="chart-sub">GA4 Landing Page report · Jan 1 – Dec 31, 2025 · Entry-point sessions only · Hub page shown separately at bottom</div>
+    <div class="chart-canvas-wrap" style="height:420px">
+      <canvas id="chartCuratedSessions"></canvas>
+    </div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Experience</th>
+        <th style="text-align:right">Sessions</th>
+        <th style="text-align:right">Views</th>
+        <th style="text-align:right">Active Users</th>
+        <th style="text-align:right">Avg. Engagement</th>
+        <th class="bar-cell">Sessions share</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>Ice Hut Luxe in the Lakeland</td>
+        <td style="text-align:right">463</td>
+        <td style="text-align:right">512</td>
+        <td style="text-align:right">420</td>
+        <td style="text-align:right">45s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div></td>
+      </tr>
+      <tr>
+        <td>The Ultimate Greenhouse Tour</td>
+        <td style="text-align:right">101</td>
+        <td style="text-align:right">121</td>
+        <td style="text-align:right">87</td>
+        <td style="text-align:right">48s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:22%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Whitney Lakes</td>
+        <td style="text-align:right">82</td>
+        <td style="text-align:right">93</td>
+        <td style="text-align:right">74</td>
+        <td style="text-align:right">49s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:18%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Culinary Picks Driving Loop</td>
+        <td style="text-align:right">78</td>
+        <td style="text-align:right">101</td>
+        <td style="text-align:right">73</td>
+        <td style="text-align:right">10s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:17%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Best Breweries &amp; Distilleries</td>
+        <td style="text-align:right">52</td>
+        <td style="text-align:right">73</td>
+        <td style="text-align:right">51</td>
+        <td style="text-align:right">29s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:11%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Fab 48 Food Quest</td>
+        <td style="text-align:right">46</td>
+        <td style="text-align:right">80</td>
+        <td style="text-align:right">44</td>
+        <td style="text-align:right">8s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:10%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Hidden Lakeside Gems</td>
+        <td style="text-align:right">31</td>
+        <td style="text-align:right">44</td>
+        <td style="text-align:right">31</td>
+        <td style="text-align:right">9s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:7%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Watery Fun Awaits — Lakes &amp; Rivers Loop</td>
+        <td style="text-align:right">31</td>
+        <td style="text-align:right">41</td>
+        <td style="text-align:right">28</td>
+        <td style="text-align:right">4s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:7%"></div></div></td>
+      </tr>
+      <tr>
+        <td>24 Hours at M&eacute;tis Crossing</td>
+        <td style="text-align:right">24</td>
+        <td style="text-align:right">33</td>
+        <td style="text-align:right">24</td>
+        <td style="text-align:right">3s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:5%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Vilna &amp; Bellis: Time Travel &amp; Outdoor Quests</td>
+        <td style="text-align:right">23</td>
+        <td style="text-align:right">27</td>
+        <td style="text-align:right">21</td>
+        <td style="text-align:right">75s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:5%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Everything Dill Trail</td>
+        <td style="text-align:right">16</td>
+        <td style="text-align:right">36</td>
+        <td style="text-align:right">15</td>
+        <td style="text-align:right">18s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:3%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Lac La Biche Vibes</td>
+        <td style="text-align:right">13</td>
+        <td style="text-align:right">22</td>
+        <td style="text-align:right">13</td>
+        <td style="text-align:right">69s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:3%"></div></div></td>
+      </tr>
+      <tr>
+        <td>Smoky Lake Getaway</td>
+        <td style="text-align:right">9</td>
+        <td style="text-align:right">15</td>
+        <td style="text-align:right">9</td>
+        <td style="text-align:right">8s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:2%"></div></div></td>
+      </tr>
+      <tr>
+        <td>M&eacute;tis Crossing</td>
+        <td style="text-align:right">5</td>
+        <td style="text-align:right">7</td>
+        <td style="text-align:right">5</td>
+        <td style="text-align:right">2s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:1%"></div></div></td>
+      </tr>
+      <tr class="highlight-coral">
+        <td>Hub: /things-to-do/curated-adventures</td>
+        <td style="text-align:right">61</td>
+        <td style="text-align:right">232</td>
+        <td style="text-align:right">51&dagger;</td>
+        <td style="text-align:right">40s</td>
+        <td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:13%"></div></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="table-note">Sessions = GA4 Landing Page report (entry-point sessions only). Views = GA4 Pages &amp; Screens report (all page loads). Avg. engagement = seconds per landing session, rounded to nearest second. &dagger; Hub active users: 51 entered the site via the hub URL; 115 active users viewed it in total (many navigated to it from sub-pages). One test-URL page (enchiladas-to-souvlaki-in-the-lakeland-test: 12 sessions / 23 views / 31s avg) and one malformed URL artifact (/things-to-do/Y3VyYXRlZC, 4 sessions, no view data) are excluded from this table but are included in the total session figure (1,051) shown in the metric cards above.</p>
+
+  <h3 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px">Engagement Quality: Two Tiers</h3>
+  <div class="grid-2">
+    <div class="findings-card mint">
+      <div class="findings-title">High engagement &mdash; avg. &gt;39 seconds per session</div>
+      <ul>
+        <li>Vilna &amp; Bellis: Time Travel &amp; Outdoor Quests &mdash; 75s avg</li>
+        <li>Lac La Biche Vibes &mdash; 69s avg</li>
+        <li>Whitney Lakes &mdash; 49s avg</li>
+        <li>The Ultimate Greenhouse Tour &mdash; 48s avg</li>
+        <li>Ice Hut Luxe in the Lakeland &mdash; 45s avg</li>
+        <li>Hub page (/things-to-do/curated-adventures) &mdash; 40s avg</li>
+      </ul>
+    </div>
+    <div class="findings-card peach">
+      <div class="findings-title">Low engagement &mdash; avg. &lt;15 seconds per session</div>
+      <ul>
+        <li>M&eacute;tis Crossing &mdash; 2s avg</li>
+        <li>24 Hours at M&eacute;tis Crossing &mdash; 3s avg</li>
+        <li>Watery Fun Awaits &mdash; 4s avg</li>
+        <li>Fab 48 Food Quest &mdash; 8s avg</li>
+        <li>Smoky Lake Getaway &mdash; 8s avg</li>
+        <li>Hidden Lakeside Gems &mdash; 9s avg</li>
+        <li>Culinary Picks Driving Loop &mdash; 10s avg</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:16px">Traffic Sources</h3>
+  <div class="alert-card navy">
+    <div class="alert-title">Page-level source data not available in this dataset</div>
+    <div class="alert-body">The provided GA4 reports do not include a per-page channel breakdown for Curated Adventures URLs. For site-wide context in 2025: Organic Search delivered 7,438 sessions at a 62.4% engagement rate; Direct contributed 9,393 sessions at 23.7% engagement rate; Organic Social 3,044 sessions at 58.8%; Referral 1,916 sessions at 55.6%; and Email 189 sessions at 46.6%. The 95&ndash;99% new-user rate observed consistently across Curated Adventures sub-pages confirms these pages function primarily as first-touch discovery content, consistent with organic search or external referral traffic reaching specific itinerary pages directly.</div>
+  </div>
+
+  <div class="insight-callout navy">
+    <div class="insight-callout-title">What the data shows</div>
+    <div class="insight-callout-body">Traffic is heavily concentrated: Ice Hut Luxe generated 463 of 990 sub-page landing sessions (46.8%) &mdash; more than the next five pages combined. The hub page is not functioning as a meaningful discovery gateway; only 61 visitors entered Curated Adventures through it across the full year. Engagement quality splits sharply between pages that hold attention (Vilna &amp; Bellis: 75s, Lac La Biche Vibes: 69s, Whitney Lakes: 49s) and pages that lose it in under 10 seconds (M&eacute;tis Crossing: 2s, 24 Hours at M&eacute;tis Crossing: 3s, Watery Fun Awaits: 4s). The low-engagement group warrants a content review; sub-10-second averages indicate visitors are landing, finding a mismatch with their expectation, and leaving without reading. No key events or conversions were recorded on any Curated Adventures page in 2025 &mdash; GA4 is not currently configured to measure clicks to operators, booking links, or other post-visit actions from these pages.</div>
+  </div>
+</section>
+
+<!-- SECTION 7: EMAIL NEWSLETTER -->
 <section class="section" id="email">
-  <div class="section-eyebrow">06 / EMAIL NEWSLETTER</div>
+  <div class="section-eyebrow">07 / EMAIL NEWSLETTER</div>
   <h2 class="section-title">Discontinued while performing at its best.</h2>
 
   <div class="email-stat-row">
@@ -1104,9 +1321,9 @@ body{font-family:'Inter Tight',sans-serif;color:var(--text-primary);background:v
   </div>
 </section>
 
-<!-- SECTION 7: RECOMMENDATIONS -->
+<!-- SECTION 8: RECOMMENDATIONS -->
 <section class="section" id="recommendations">
-  <div class="section-eyebrow">07 / RECOMMENDATIONS</div>
+  <div class="section-eyebrow">08 / RECOMMENDATIONS</div>
   <h2 class="section-title">Ten actions, ranked by evidence strength.</h2>
   <p class="section-desc">Recommendations 1–2 are immediate technical actions that make everything else measurable. Recommendation 3 is a strategic decision with a strong evidence case. From 4 onwards: content and channel investments that can run in parallel.</p>
 
@@ -1423,6 +1640,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initChartPageViews();
   initChartBubble();
   initChartEmail();
+  initChartCurated();
 });
 
 // Chart 1: Page Views Horizontal Bar
@@ -1703,6 +1921,75 @@ function initChartEmail() {
           title: { display: true, text: 'Open Rate (%)', font: { family: 'JetBrains Mono', size: 10 } },
           grid: { color: 'rgba(0,0,0,0.05)' },
           ticks: { font: { family: 'JetBrains Mono', size: 10 }, callback: v => v + '%' }
+        }
+      }
+    }
+  });
+}
+
+
+// Chart: Curated Adventures Sessions
+function initChartCurated() {
+  const ctx = document.getElementById('chartCuratedSessions');
+  if (!ctx) return;
+  const labels = [
+    'Ice Hut Luxe in the Lakeland',
+    'The Ultimate Greenhouse Tour',
+    'Whitney Lakes',
+    'Culinary Picks Driving Loop',
+    'Best Breweries & Distilleries',
+    'Fab 48 Food Quest',
+    'Hidden Lakeside Gems',
+    'Watery Fun Awaits',
+    '24 Hours at Métis Crossing',
+    'Vilna & Bellis Outdoor Quests',
+    'Everything Dill Trail',
+    'Lac La Biche Vibes',
+    'Smoky Lake Getaway',
+    'Métis Crossing',
+    'Hub (/curated-adventures)'
+  ];
+  const data = [463, 101, 82, 78, 52, 46, 31, 31, 24, 23, 16, 13, 9, 5, 61];
+  const colors = [
+    CORAL,
+    'rgba(24,63,97,0.72)', 'rgba(24,63,97,0.68)', 'rgba(24,63,97,0.64)',
+    'rgba(24,63,97,0.60)', 'rgba(24,63,97,0.56)', 'rgba(24,63,97,0.52)',
+    'rgba(24,63,97,0.48)', 'rgba(24,63,97,0.44)', 'rgba(24,63,97,0.40)',
+    'rgba(24,63,97,0.36)', 'rgba(24,63,97,0.33)', 'rgba(24,63,97,0.30)',
+    'rgba(24,63,97,0.27)', 'rgba(24,63,97,0.45)'
+  ];
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Landing Sessions',
+        data,
+        backgroundColor: colors,
+        borderRadius: 4,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ' ' + ctx.parsed.x.toLocaleString() + ' sessions'
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.05)' },
+          ticks: { font: { family: 'JetBrains Mono', size: 10 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { family: 'Inter Tight', size: 11 } }
         }
       }
     }
